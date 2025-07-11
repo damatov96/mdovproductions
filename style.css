@@ -550,14 +550,12 @@ section {
 /* ========================================================================= */
 
 .contact-section {
-    background-color: #1a1a1a; /* Fondo original que tenías en tu código */
     padding: 100px 0;          /* Espaciado interno (original) */
     text-align: center;        /* Alineación (original) */
     position: relative;        /* Posicionamiento (original) */
     z-index: 10;               /* Z-index (original) */
     margin-bottom: 0;          /* Margen (original) */
     border-radius: 0;          /* Bordes (original) */
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5); /* Sombra (original) */
 }
 
 .contact-flex-container {
