@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MDOV Productions</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="android-chrome-192x192" href="android-chrome-192x192.png">
+    <link rel="manifest" href="site.webmanifest"> 
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <canvas id="psychedelicCanvas"></canvas>
+
+    <header>
+        <div class="container">
+            <a href="#video-destacado" class="logo-link">
+                <img src="images/LogoMDOV.jpg" alt="Logo MDOV Productions" class="header-logo" />
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#video-destacado">Nosotros</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#instrumentals-reflector-section">Nuestros trabajos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="video-destacado" class="video-section">
+        <div class="container video-text-flex">
+            <div class="video-responsive">
+                <video controls autoplay muted loop poster="images/miniatura-video.jpg">
+                    <source src="videos/eldesayuno.mp4" type="video/mp4" />
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+            <div class="text-explanation">
+                <p class="full-width-text">
+                    <p>En <b>MDOV Productions</b>, cada proyecto refleja mi pasión por convertir ideas en obras audiovisuales y musicales. Como marca emergente, estoy en constante aprendizaje para perfeccionar mi arte y mi objetivo principal es crear contenido que conecte y demuestre mi compromiso en cada nota y fotograma. 
+                    </p>
+                    <p class="full-width-text">
+                    Este cortometraje es una meditación visual y sonora sobre la intrínseca belleza de lo cotidiano y la inestimable fragilidad del tiempo. Busca invitarnos a reflexionar sobre la profunda importancia de apreciar cada pequeño instante y el valor irrecuperable de los momentos compartidos con nuestros seres queridos, recordándonos la efímera danza de la vida.
+                    <b>¡Acompáñame en esta aventura de sonido y visión!</b></p>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <div class="container">
+            <h2>Galería de fotos</h2>
+            <div id="carouselMDOV" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/13.jpg" class="carousel-img" alt="Imagen de galería 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/34.jpg" class="carousel-img" alt="Imagen de galería 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/20.jpg" class="carousel-img" alt="Imagen de galería 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/5.jpg" class="carousel-img" alt="Imagen de galería 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/8.jpg" class="carousel-img" alt="Imagen de galería 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/10.jpg" class="carousel-img" alt="Imagen de galería 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/28.jpg" class="carousel-img" alt="Imagen de galería 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/39.jpg" class="carousel-img" alt="Imagen de galería 8">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/37.jpg" class="carousel-img" alt="Imagen de galería 9">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/30.jpg" class="carousel-img" alt="Imagen de galería 10">
+                    </div>
+                    </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselMDOV" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselMDOV" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="custom-video-section">
+        <div class="container custom-flex-container">
+            <div class="custom-text-box">
+                <h2>Proyectos musicales: Fuego Por Cenizas</h2>
+                <p>En este proyecto realizado por diferentes artistas de la escena del Hip Hop emergente de Fontibón, el productor <b>DAMATOV</b> creó la instrumental para el rapero <b>MILENARIO</b>, y junto con el equipo de producción <b>"DOMAINSTUDIOS"</b> se lanzó esta propuesta hace algunos años. </p>
+                <p>Hemos puesto un gran esfuerzo en cada detalle, desde la dirección y la fotografía hasta la postproducción y la banda sonora.</p>
+                <ul>
+                    <li>Dirección: MDOV Productions</li>
+                    <li>Producción: Domain Studios</li>
+                    <li>Instrumental: DAMATOV </li>
+                    <li>Lanzamiento: 21 de agosto de 2021</li>
+                </ul>
+                <a href="https://www.youtube.com/channel/UCoIL0HZdPNUyml8-UORh_4g" class="button custom-button" target="_blank">Ver más trabajos de 7C</a>
+            </div>
+            <div class="custom-video-responsive">
+                <video controls autoplay muted loop poster="images/miniatura-video.jpg">
+                    <source src="videos/fuegoporcenizas.mp4" type="video/mp4" />
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+    </section>
+    
+    <section id="instrumentals-reflector-section" class="instrumentals-reflector-section">
+        <div class="container">
+            <h2>¡Explora nuestras últimas pistas de producción!</h2>
+            <p>Pasa el ratón sobre cada pista para revelar su brillo, y haz clic para escuchar una muestra.</p>
+
+            <div class="instrumentals-grid">
+                <div class="instrumental-item" data-audio-src="audio/instrumental1.mp3">
+                    <img src="images/nota.png" alt="Miniatura Instrumental 1" class="instrumental-thumbnail">
+                    <div class="instrumental-overlay">
+                        <p class="instrumental-title">Beat chill</p>
+                        <p class="instrumental-cta">Haz clic para escuchar</p>
+                    </div>
+                    <audio class="instrumental-audio"></audio> 
+                </div>
+
+                <div class="instrumental-item" data-audio-src="audio/instrumental2.mp3">
+                    <img src="images/nota.png" alt="Miniatura Instrumental 2" class="instrumental-thumbnail">
+                    <div class="instrumental-overlay">
+                        <p class="instrumental-title">Beat gangster</p>
+                        <p class="instrumental-cta">Haz clic para escuchar</p>
+                    </div>
+                    <audio class="instrumental-audio"></audio>
+                </div>
+
+                <div class="instrumental-item" data-audio-src="audio/instrumental3.mp3">
+                    <img src="images/nota.png" alt="Miniatura Instrumental 3" class="instrumental-thumbnail">
+                    <div class="instrumental-overlay">
+                        <p class="instrumental-title">Beat intro</p>
+                        <p class="instrumental-cta">Haz clic para escuchar</p>
+                    </div>
+                    <audio class="instrumental-audio"></audio>
+                </div>
+
+                </div>
+        </div>
+    </section>
+    <section id="contacto" class="contact-section">
+        <div class="container contact-flex-container">
+            <div class="contact-info-column">
+                <h2 class="contact-heading">¡Contáctanos!</h2>
+                <p class="contact-intro-text">
+                    Cada gran proyecto comienza con un pequeño paso. Si tienes una idea sobre un proyecto audiovisual, deseas una instrumental de algún genero musical o necesitas una sesión fotográfica, haz llegado al lugar correcto. 
+                </p>
+                <ul class="contact-details-list">
+                    <li>
+                        <i class="fas fa-envelope contact-icon"></i> <a href="mailto:info@mdovproductions.com" class="contact-link">info@mdovproductions.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt contact-icon"></i> <a href="tel:+573001234567" class="contact-link">+57 319 376 5608</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt contact-icon"></i> <span class="contact-text">Bogotá, Colombia</span>
+                    </li>
+                </ul>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/tucanal/" target="_blank" class="social-icon-link">
+                        <i class="fab fa-instagram"></i> </a>
+                    <a href="https://www.youtube.com/tucanal/" target="_blank" class="social-icon-link">
+                        <i class="fab fa-youtube"></i> </a>
+                    <a href="https://twitter.com/tucanal/" target="_blank" class="social-icon-link">
+                        <i class="fab fa-twitter"></i> </a>
+                    </div>
+            </div>
+
+            <div class="contact-form-column">
+                <h2 class="form-heading">Envíanos un Mensaje</h2>
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Tu Nombre</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Tu Correo Electrónico</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Ej. tu_correo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Asunto</label>
+                        <input type="text" id="subject" name="subject" class="form-control" placeholder="Ej. Consulta de Producción Musical">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Tu Mensaje</label>
+                        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-column footer-brand">
+                <a href="#video-destacado" class="footer-logo-link">
+                    <img src="images/LogoMDOV.jpg" alt="Logo MDOV Productions" class="footer-logo" />
+                </a>
+                <p class="footer-slogan">Transformando visiones en realidad audiovisual y sonora.</p>
+                <p class="footer-copyright-main">© 2025 M.D.O.V. Productions.</p>
+            </div>
+
+            <div class="footer-column footer-links">
+                <h3 class="footer-heading">Navegación</h3>
+                <ul class="footer-list">
+                    <li><a href="#video-destacado" class="footer-link">Inicio</a></li>
+                    <li><a href="#galeria" class="footer-link">Galería</a></li>
+                    <li><a href="#instrumentals-reflector-section" class="footer-link">Instrumentales</a></li>
+                    <li><a href="#contacto" class="footer-link">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3 class="footer-heading">Contacto</h3>
+                <ul class="footer-list">
+                    <li>
+                        <i class="fas fa-envelope footer-icon"></i> 
+                        <a href="mailto:info@mdovproductions.com" class="footer-link">info@mdovproductions.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt footer-icon"></i> 
+                        <a href="tel:+573001234567" class="footer-link">+57 319 376 5608</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt footer-icon"></i> 
+                        <span class="footer-text">Bogotá, Colombia</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-social">
+                <h3 class="footer-heading">Síguenos</h3>
+                <div class="social-icons-footer">
+                    <a href="https://www.instagram.com/tucanal/" target="_blank" class="social-icon-footer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/tucanal/" target="_blank" class="social-icon-footer">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://twitter.com/tucanal/" target="_blank" class="social-icon-footer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <p class="footer-rights">Todos los derechos reservados.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <div class="container">
+                <p class="footer-tagline">MDOV Productions - Tu sonido, tu imagen, nuestra pasión.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Obtiene la referencia al elemento <canvas> y su contexto 2D
+        const canvas = document.getElementById('psychedelicCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = []; // Array para almacenar todas las partículas
+        const numParticles = 150; // Número total de partículas a dibujar
+        // Colores predefinidos para las partículas (estilo psicodélico)
+        const colors = ['#FF69B4', '#00FFFF', '#90EE90', '#FFA500', '#BA55D3', '#1E90FF'];
+
+        // Función para ajustar el tamaño del canvas al tamaño de la ventana
+        function resizeCanvas() {
+            canvas.width = window.innerWidth; // Ancho del canvas igual al ancho de la ventana
+            canvas.height = window.innerHeight; // Alto del canvas igual al alto de la ventana
+        }
+        // Añade un event listener para redimensionar el canvas cuando la ventana cambie de tamaño
+        window.addEventListener('resize', resizeCanvas);
+        // Llama a la función una vez al inicio para establecer el tamaño inicial
+        resizeCanvas();
+
+        // Clase que define las propiedades y comportamiento de cada partícula individual
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x; // Posición X inicial de la partícula
+                this.y = y; // Posición Y inicial de la partícula
+                this.size = Math.random() * 6 + 1; // Tamaño aleatorio de la partícula (entre 1 y 7)
+                this.speedX = Math.random() * 2 - 1; // Velocidad aleatoria en el eje X (entre -1 y 1)
+                this.speedY = Math.random() * 2 - 1; // Velocidad aleatoria en el eje Y (entre -1 y 1)
+                this.color = color; // Color de la partícula
+                this.opacity = Math.random() * 0.6 + 0.4; // Opacidad inicial aleatoria (entre 0.4 y 1)
+            }
+            // Método para actualizar la posición y opacidad de la partícula en cada frame
+            update() {
+                this.x += this.speedX; // Mueve la partícula en X
+                this.y += this.speedY; // Mueve la partícula en Y
+                // Invierte la dirección si la partícula llega a los bordes del canvas
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                this.opacity -= 0.003; // Reduce la opacidad gradualmente (se desvanece)
+                // Si la partícula se vuelve completamente transparente, la "reinicia" en una nueva posición
+                if (this.opacity < 0) {
+                    this.x = Math.random() * canvas.width; // Nueva posición X aleatoria
+                    this.y = Math.random() * canvas.height; // Nueva posición Y aleatoria
+                    this.opacity = Math.random() * 0.6 + 0.4; // Nueva opacidad inicial
+                    this.size = Math.random() * 6 + 1; // Nuevo tamaño aleatorio
+                    this.color = colors[(Math.random() * colors.length) | 0]; // Nuevo color aleatorio
+                }
+            }
+            // Método para dibujar la partícula en el canvas
+            draw() {
+                ctx.fillStyle = this.color; // Establece el color de relleno
+                ctx.globalAlpha = this.opacity; // Establece la opacidad para el dibujo
+                ctx.beginPath(); // Inicia un nuevo camino de dibujo
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); // Dibuja un círculo (la partícula)
+                ctx.fill(); // Rellena el círculo
+                ctx.globalAlpha = 1; // Restaura la opacidad global a 1 para no afectar otros dibujos
+            }
+        }
+
+        // Función para inicializar todas las partículas al inicio o al redimensionar
+        function initParticles() {
+            particles = []; // Vacia el array de partículas existente
+            for (let i = 0; i < numParticles; i++) {
+                // Crea nuevas partículas con posiciones y colores aleatorios
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const color = colors[(Math.random() * colors.length) | 0]; // Selecciona un color aleatorio del array 'colors'
+                particles.push(new Particle(x, y, color)); // Añade la nueva partícula al array
+            }
+        }
+
+        // Función que crea el bucle de animación para las partículas
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpia todo el canvas en cada frame
+            particles.forEach(p => { // Para cada partícula en el array:
+                p.update(); // Actualiza su estado
+                p.draw(); // La dibuja
+            });
+            // Solicita al navegador que llame a esta función de nuevo en el siguiente frame de animación
+            requestAnimationFrame(animateParticles); 
+        }
+
+        // Llama a las funciones para iniciar el fondo de partículas
+        initParticles();
+        animateParticles();
+    </script>
+
+    <script>
+        // Asegura que el script se ejecute una vez el DOM (HTML) esté completamente cargado
+        document.addEventListener('DOMContentLoaded', () => {
+            // Selecciona todos los elementos con la clase 'instrumental-item'
+            const instrumentalItems = document.querySelectorAll('.instrumental-item');
+            // Variable para rastrear qué elemento de audio se está reproduciendo actualmente.
+            // Esto evita que múltiples audios se reproduzcan al mismo tiempo.
+            let currentPlayingAudio = null; 
+
+            // Itera sobre cada elemento 'instrumental-item' encontrado
+            instrumentalItems.forEach(item => {
+                // Obtiene la ruta del archivo de audio del atributo 'data-audio-src' del elemento.
+                const audioSrc = item.dataset.audioSrc; 
+                // Selecciona el elemento <audio> dentro del 'instrumental-item' actual.
+                const audio = item.querySelector('.instrumental-audio'); 
+
+                // Asigna la ruta del archivo de audio al atributo 'src' del elemento <audio>.
+                // Esto se hace una sola vez al cargar la página.
+                audio.src = audioSrc;
+
+                // Añade un 'event listener' para el evento 'click' en cada 'instrumental-item'.
+                item.addEventListener('click', () => {
+                    // Comprueba si el audio actual está pausado (es decir, no se está reproduciendo)
+                    if (audio.paused) {
+                        // Si hay otro audio reproduciéndose Y no es el mismo audio que se hizo clic
+                        if (currentPlayingAudio && currentPlayingAudio !== audio) {
+                            currentPlayingAudio.pause(); // Pausa el audio que se estaba reproduciendo
+                            // Encuentra el 'instrumental-item' que tenía la clase 'playing' y se la quita.
+                            const previousPlayingItem = document.querySelector('.instrumental-item.playing');
+                            if (previousPlayingItem) {
+                                previousPlayingItem.classList.remove('playing');
+                            }
+                        }
+                        // Reproduce el audio del 'instrumental-item' actual
+                        audio.play();
+                        // Añade la clase 'playing' al 'instrumental-item' actual para activar estilos visuales
+                        item.classList.add('playing'); 
+                        // Actualiza la variable para rastrear que este audio es el que se está reproduciendo ahora
+                        currentPlayingAudio = audio; 
+                    } else {
+                        // Si el audio ya se está reproduciendo, lo pausa
+                        audio.pause();
+                        // Quita la clase 'playing' del 'instrumental-item' actual
+                        item.classList.remove('playing'); 
+                        // Resetea la variable 'currentPlayingAudio' ya que nada se está reproduciendo
+                        currentPlayingAudio = null; 
+                    }
+                });
+
+                // Evento para cuando el audio termina de reproducirse por sí solo
+                audio.addEventListener('ended', () => {
+                    item.classList.remove('playing'); // Quita la clase 'playing' cuando el audio finaliza
+                    currentPlayingAudio = null;
+                });
+
+                // Evento para cuando el audio es pausado manualmente (por ejemplo, si el navegador tiene controles visibles)
+                audio.addEventListener('pause', () => {
+                     // Solo quita la clase si el audio pausado es el que estaba siendo rastreado
+                     if (currentPlayingAudio && currentPlayingAudio === audio) {
+                        item.classList.remove('playing');
+                        currentPlayingAudio = null;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

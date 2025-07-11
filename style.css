@@ -1,0 +1,1200 @@
+/* ========================================================================= */
+/* FUENTES DE GOOGLE FONTS: Playfair Display, Lora, Bodoni Moda */
+/* Este bloque importa las fuentes personalizadas desde Google Fonts. */
+/* ¡DEBE IR AL PRINCIPIO DE TU ARCHIVO style.css para que las fuentes estén disponibles! */
+/* ========================================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+/* ===================================== */
+/* ========== FONDO PSICODÉLICO ========= */
+/* Estilos para el elemento <canvas> que crea el fondo animado de partículas. */
+/* ===================================== */
+#psychedelicCanvas,
+canvas {
+  position: fixed; /* Posiciona el canvas de forma fija en la ventana */
+  top: 0;           /* Alineado a la parte superior */
+  left: 0;          /* Alineado a la parte izquierda */
+  width: 100%;      /* Ocupa todo el ancho de la ventana */
+  height: 100%;     /* Ocupa todo el alto de la ventana */
+  z-index: -1;      /* Envía el canvas al fondo, detrás de todo el contenido */
+  display: block;   /* Asegura que el canvas se muestre como un bloque */
+}
+
+/* ===================================== */
+/* ========== ESTILOS GENERALES ========= */
+/* Estilos aplicados a todo el cuerpo de la página y a contenedores básicos. */
+/* ===================================== */
+body {
+  /* APLICACIÓN DE FUENTE: Establece 'Lora' como la fuente principal para todo el texto. */
+  /* 'serif' es una fuente de respaldo genérica si 'Lora' no se carga. */
+  font-family: 'Lora', serif; 
+  line-height: 1.6;          /* Altura de línea para mejorar la legibilidad del texto */
+  margin: 0;                 /* Elimina el margen predeterminado del navegador */
+  padding: 0;                /* Elimina el padding predeterminado del navegador */
+  overflow-x: hidden;        /* Evita el desplazamiento horizontal no deseado */
+  background-color: #1d6571; /* Color de fondo principal del body (original del usuario) */
+  color: #e0e0e0;            /* Color de texto predeterminado para todo el body */
+}
+
+.container {
+  width: 100%;           /* Ocupa el 100% del ancho disponible */
+  max-width: 1400px;     /* Ancho máximo del contenedor para centrar el contenido */
+  margin: auto;          /* Centra el contenedor horizontalmente */
+  overflow: hidden;      /* Oculta cualquier contenido que se desborde */
+}
+
+/* ===================================== */
+/* ========== BOTONES GENERALES ========= */
+/* Estilos aplicados a la clase '.button' que se usa en varios botones de la página. */
+/* ===================================== */
+.button {
+  display: inline-block;        /* Permite que el botón se comporte como texto pero acepte ancho/alto */
+  background: #77aaff;          /* Color de fondo del botón (original) */
+  color: #fff;                  /* Color del texto del botón (original) */
+  padding: 12px 25px;           /* Espaciado interno del botón (original) */
+  border-radius: 5px;           /* Bordes ligeramente redondeados (original) */
+  text-decoration: none;        /* Elimina el subrayado del texto del botón (original) */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves para efectos al pasar el ratón (original) */
+  font-weight: bold;            /* Texto en negrita (original) */
+  text-transform: uppercase;    /* Convierte el texto a mayúsculas (original) */
+  letter-spacing: 0.5px;        /* Espaciado entre letras (original) */
+  /* APLICACIÓN DE FUENTE: 'Lora' para los botones generales, por consistencia con el texto del body. */
+  font-family: 'Lora', serif; 
+}
+.button:hover {
+  background-color: #1e3353;    /* Color de fondo al pasar el ratón (original) */
+  transform: translateY(-2px);  /* Pequeño desplazamiento hacia arriba al pasar el ratón (original) */
+}
+
+/* ===================================== */
+/* ========== TIPOGRAFÍA GENERAL (APLICACIÓN DE LAS NUEVAS FUENTES) ========= */
+/* Define las fuentes para los encabezados y otros elementos de texto importantes. */
+/* ===================================== */
+h1, h2, h3, h4, h5, h6 {
+  /* APLICACIÓN DE FUENTE: 'Playfair Display' para todos los títulos (h1 a h6). */
+  /* 'serif' es una fuente de respaldo si 'Playfair Display' no se carga. */
+  font-family: 'Playfair Display', serif; 
+  color: #ffffff; /* Color de los títulos (original) */
+  margin-bottom: 15px; /* Margen inferior de los títulos (original) */
+}
+
+a {
+  color: #77aaff;           /* Color de los enlaces (original) */
+  text-decoration: none;     /* Elimina el subrayado de los enlaces (original) */
+  transition: color 0.3s ease; /* Transición suave para el color del enlace (original) */
+  /* APLICACIÓN DE FUENTE: 'Lora' para todos los enlaces, para consistencia. */
+  font-family: 'Lora', serif; 
+}
+a:hover {
+  color: #5b7195;          /* Color del enlace al pasar el ratón (original) */
+  text-decoration: underline; /* Subraya el enlace al pasar el ratón (original) */
+}
+
+/* ===================================== */
+/* ========== VIDEO + TEXTO FLEX (SECCIÓN ORIGINAL DE VIDEO LOCAL) ========= */
+/* Estilos para la sección principal que contiene el video local y su texto explicativo. */
+/* ===================================== */
+.video-text-flex {
+  display: flex;                /* Usa Flexbox para organizar el video y el texto en línea */
+  flex-wrap: wrap;              /* Permite que los elementos se envuelvan en nuevas líneas si no hay espacio */
+  gap: 40px;                    /* Espacio entre el video y el texto */
+  align-items: center;          /* Alinea los elementos verticalmente al centro */
+  justify-content: space-between; /* Distribuye el espacio entre los elementos */
+}
+.video-text-flex .text-explanation { 
+    flex: 1 1 40%;              /* El texto ocupa el 40% del ancho flexible */
+    min-width: 300px;           /* Ancho mínimo antes de que los elementos se apilen */
+    max-width: 100%;            /* Ancho máximo hasta 100% */
+    text-align: left;           /* Alinea el texto a la izquierda */
+}
+
+.text-explanation h2 {
+  font-size: 2rem;           /* Tamaño de fuente del título h2 en esta sección (original) */
+  margin-bottom: 20px;       /* Margen inferior (original) */
+  color: #ffffff;            /* Color del título (original) */
+  /* APLICACIÓN DE FUENTE: 'Playfair Display' para el título h2 de esta sección. */
+  font-family: 'Playfair Display', serif; 
+}
+
+.text-explanation p {
+  text-align: justify;       /* Justifica el texto para una apariencia de bloque (original) */
+  font-size: 1.1rem;         /* Tamaño de fuente de los párrafos (original) */
+  line-height: 1.6;          /* Altura de línea (original) */
+  color: #0d0945;            /* Color del texto (original, se mantiene como estaba en tu código) */
+  margin-bottom: 20px;       /* Margen inferior (original) */
+  padding: 0;                /* Padding (original) */
+  /* APLICACIÓN DE FUENTE: 'Lora' para los párrafos de esta sección. */
+  font-family: 'Lora', serif; 
+}
+.full-width-text {
+  font-size: 1.1rem;         /* Tamaño de fuente (original) */
+  line-height: 1.7;          /* Altura de línea (original) */
+  color: #D0D0D0;            /* Color (original) */
+  padding: 0;                /* Padding (original) */
+  margin: 25px 0;            /* Margen (original) */
+  text-align: center;        /* Alineación (original) */
+  /* APLICACIÓN DE FUENTE: 'Lora' para la clase 'full-width-text'. */
+  font-family: 'Lora', serif; 
+}
+
+/* ===================================== */
+/* ========== HEADER / MENÚ SUPERIOR ========= */
+/* Estilos para el encabezado pegajoso (sticky) en la parte superior de la página. */
+/* ===================================== */
+header {
+  padding: 0.3rem 0;                /* Espaciado interno (original) */
+  background: rgb(22, 32, 46);      /* Color de fondo (original) */
+  color: #fff;                      /* Color de texto (original) */
+  position: sticky;                 /* Hace el encabezado pegajoso al desplazarse */
+  top: 0;                           /* Se pega a la parte superior de la ventana */
+  z-index: 1000;                    /* Asegura que esté por encima de otros elementos */
+  box-shadow: rgba(10, 21, 44, 0.9); /* Sombra (original) */
+  display: flex;                    /* Usa Flexbox para alinear elementos internos */
+  align-items: center;              /* Alinea elementos verticalmente al centro */
+  justify-content: space-between;   /* Distribuye espacio entre elementos */
+}
+header .container {
+  display: flex;                    /* Usa Flexbox para alinear logo y navegación */
+  align-items: center;              /* Alinea elementos verticalmente al centro */
+  justify-content: space-between;   /* Distribuye espacio entre elementos */
+  max-width: 1400px;                /* Ancho máximo */
+  margin: auto;                     /* Centra el contenedor */
+  padding: 0;                       /* Padding (original) */
+}
+
+.header-logo {
+  width: 250px;                 /* Ancho del logo (original) */
+  height: auto;                 /* Altura automática para mantener proporción */
+  max-height: 150px;            /* Altura máxima del logo (original) */
+  transition: max-height 0.3s ease-in-out, width 0.3s ease-in-out; /* Transición (original) */
+}
+.logo-link {
+  display: block;               /* Muestra como bloque (original) */
+  margin: 0;                    /* Margen (original) */
+}
+
+/* Navegación dentro del encabezado */
+header nav {
+  margin-top: 0;                /* Margen (original) */
+}
+header ul {
+  margin: 0;                    /* Margen (original) */
+  padding: 0;                   /* Padding (original) */
+  list-style: none;             /* Elimina viñetas de la lista */
+  display: flex;                /* Usa Flexbox para los ítems de la lista */
+  align-items: center;          /* Alinea ítems verticalmente */
+}
+header nav ul li {
+  display: inline-block;        /* Muestra como inline-block (original) */
+  padding: 8px 15px;            /* Padding (original) */
+  margin: 0 5px;                /* Margen (original) */
+  background-color: rgba(68, 68, 68, 0.7); /* Fondo (original) */
+  border-radius: 5px;           /* border-radius (original) */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra (original) */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Transición (original) */
+}
+header nav ul li:hover {
+  background-color: #5b7195;    /* Fondo al pasar el ratón (original) */
+  transform: translateY(-1px);  /* Transform al pasar el ratón (original) */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3); /* Sombra al pasar el ratón (original) */
+}
+header a {
+  color: #fff;                  /* Color del texto del enlace (original) */
+  text-transform: uppercase;    /* Texto en mayúsculas (original) */
+  font-size: 1rem;              /* Tamaño de fuente (original) */
+  font-weight: 500;             /* Peso de fuente (original) */
+  /* APLICACIÓN DE FUENTE: 'Lora' para los enlaces de navegación del encabezado. */
+  font-family: 'Lora', serif; 
+}
+
+/* Estilos cuando el encabezado se ha desplazado (scrolled) */
+header.scrolled {
+  padding: 0.2rem 0;                     /* Padding reducido (original) */
+  background-color: rgba(26, 26, 26, 0.95); /* Fondo más oscuro (original) */
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);   /* Sombra (original) */
+}
+header.scrolled .header-logo {
+  max-height: 40px;                     /* Logo más pequeño (original) */
+  width: 100px;                         /* Ancho del logo (original) */
+}
+header.scrolled nav ul li {
+  padding: 5px 10px;                    /* Padding reducido (original) */
+  margin: 0 3px;                        /* Margen reducido (original) */
+  background-color: rgba(51, 51, 51, 0.8); /* Fondo (original) */
+}
+header.scrolled nav ul li a {
+  font-size: 0.85rem;                   /* Tamaño de fuente reducido (original) */
+}
+
+/* ===================================== */
+/* ========== SECCIONES GENERALES ========= */
+/* Estilos base para todas las secciones de contenido de la página. */
+/* ===================================== */
+section {
+  padding: 80px 0;           /* Espaciado interno superior e inferior (original) */
+  text-align: center;        /* Alineación del texto (original) */
+  position: relative;        /* Posicionamiento para z-index (original) */
+  z-index: 10;               /* Asegura que el contenido esté sobre el fondo (original) */
+  margin-bottom: 20px;       /* Margen inferior (original) */
+  border-radius: 8px;        /* Bordes redondeados (original) */
+  /* NO SE AÑADE NI MODIFICA NINGÚN box-shadow aquí. */
+}
+
+.video-section {
+  border-radius: 0;          /* Esquinas rectas (original) */
+  margin-bottom: 0;          /* Sin margen inferior (original) */
+}
+.video-section h2 {
+  margin-top: 0;             /* Margen superior (original) */
+  margin-bottom: 30px;       /* Margen inferior (original) */
+  font-size: 2.2rem;         /* Tamaño de fuente (original) */
+  color: #D0D0D0;            /* Color (original) */
+  /* APLICACIÓN DE FUENTE: 'Playfair Display' para el título h2 de esta sección. */
+  font-family: 'Playfair Display', serif; 
+}
+
+/* ===================================== */
+/* ========== VIDEO RESPONSIVE (TU VIDEO LOCAL) ========= */
+/* Estilos para hacer que el video se ajuste al tamaño de la pantalla. */
+/* ===================================== */
+.video-responsive {
+  position: relative;         /* Posicionamiento relativo para contener el video absoluto */
+  padding-bottom: 30%;        /* Truco para mantener la relación de aspecto del video (original) */
+  overflow: hidden;           /* Oculta cualquier desbordamiento */
+  width: 100%;                /* Ancho completo */
+}
+.video-responsive video {
+  position: absolute;         /* Posicionamiento absoluto dentro de .video-responsive */
+  top: 0;                     /* Alineado a la parte superior */
+  left: 0;                    /* Alineado a la parte izquierda */
+  width: 100%;                /* Ancho completo del contenedor */
+  height: 100%;               /* Alto completo del contenedor */
+  object-fit: contain;        /* Ajusta el video para que quepa dentro del contenedor manteniendo su aspecto */
+}
+
+/* ===================================== */
+/* ========== CARRUSEL DE GALERÍA ========= */
+/* Estilos para la sección de la galería de fotos con carrusel de Bootstrap. */
+/* ===================================== */
+#galeria {
+  background-color: rgba(19, 73, 90, 0.6); /* Fondo semitransparente (original) */
+  padding: 60px 0;                     /* Espaciado interno (original) */
+  border-radius: 0 750px 0 750px;      /* Bordes redondeados personalizados (original) */
+  box-shadow: 0 0 30px rgba(51, 123, 218, 0.5), /* Sombra (original) */
+              0 0 60px rgba(47, 50, 193, 0.2);
+  text-align: center;                  /* Alineación del texto (original) */
+}
+
+#galeria h2 {
+  font-size: 2.2rem;         /* Tamaño de fuente (original) */
+  color: #fff;               /* Color del título (original) */
+  margin-bottom: 40px;       /* Margen inferior (original) */
+  /* APLICACIÓN DE FUENTE: 'Playfair Display' para el título h2 de la galería. */
+  font-family: 'Playfair Display', serif; 
+}
+
+#carouselMDOV {
+  max-width: 900px;          /* Ancho máximo del carrusel (original) */
+  margin: 0 auto;            /* Centra el carrusel (original) */
+}
+
+/* Estilo del contenedor de cada ítem (slide) del carrusel */
+.carousel-item {
+  display: flex;             /* Usa Flexbox para centrar la imagen */
+  justify-content: center;   /* Centra horizontalmente */
+  align-items: center;       /* Centra verticalmente */
+  height: 500px;             /* Altura fija para los ítems del carrusel (original) */
+}
+
+/* Estilo para las imágenes dentro del carrusel */
+.carousel-img {
+  max-height: 100%;          /* Altura máxima (original) */
+  max-width: 100%;           /* Ancho máximo (original) */
+  object-fit: contain;       /* Ajusta la imagen sin recortar (original) */
+  border-radius: 12px;       /* Bordes redondeados (original) */
+  box-shadow: 0 4px 20px rgba(31, 200, 206, 0.5); /* Sombra (original) */
+}
+
+/* ===================================== */
+/* ========== SECCIÓN: VIDEO LOCAL A LA DERECHA CON TEXTO A LA IZQUIERDA ========= */
+/* Estilos para la sección del cortometraje "Fuego Por Cenizas". */
+/* ===================================== */
+.custom-video-section {
+    /* NO SE MODIFICA EL BACKGROUND-COLOR (se mantiene transparente si no tiene) */
+    padding: 80px 0;                 /* Espaciado interno (original) */
+    text-align: center;              /* Alineación del texto (original) */
+    position: relative;              /* Posicionamiento (original) */
+    z-index: 10;                     /* Z-index (original) */
+    margin-bottom: 20px;             /* Margen inferior (original) */
+    border-radius: 12px;             /* Bordes redondeados (original) */
+    /* NO SE AÑADE NI MODIFICA NINGÚN box-shadow aquí. */
+}
+
+.custom-flex-container {
+    display: flex;                   /* Usa Flexbox para la disposición de texto y video */
+    flex-wrap: wrap;                 /* Permite que los elementos se envuelvan */
+    gap: 40px;                       /* Espacio entre los elementos */
+    align-items: center;             /* Alinea elementos verticalmente al centro */
+    justify-content: center;         /* Centra elementos horizontalmente */
+    padding: 0 20px;                 /* Espaciado interno (original) */
+}
+
+.custom-text-box {
+    flex: 1 1 40%;                   /* El texto ocupa el 40% del ancho flexible */
+    min-width: 320px;                /* Ancho mínimo antes de apilarse */
+    text-align: left;                /* Alineación del texto (original) */
+    padding: 15px;                   /* Espaciado interno (original) */
+    background-color: rgba(5, 24, 78, 0.1); /* Fondo semitransparente (original) */
+    border-radius: 0px 0 250px 0px;  /* Bordes redondeados (original) */
+    box-shadow: 0 4px 12px rgba(0, 17, 0, 0.3); /* Sombra (original) */
+}
+
+.custom-text-box h2 {
+    color: #0d0945;                  /* Color del título (original) */
+    font-size: 2.2rem;               /* Tamaño de fuente (original) */
+    margin-bottom: 25px;             /* Margen (original) */
+    text-align: center;              /* Alineación (original) */
+    /* APLICACIÓN DE FUENTE: 'Playfair Display' para este título h2. */
+    font-family: 'Playfair Display', serif; 
+}
+
+.custom-text-box p {
+    color: #0d0945;                  /* Color del texto (original) */
+    line-height: 1.7;                /* Altura de línea (original) */
+    margin-bottom: 15px;             /* Margen (original) */
+    font-size: 1.05rem;              /* Tamaño de fuente (original) */
+    text-align: justify;             /* Alineación (original) */
+    /* APLICACIÓN DE FUENTE: 'Lora' para los párrafos de esta sección. */
+    font-family: 'Lora', serif; 
+}
+
+.custom-text-box ul {
+    list-style: disc;                /* Estilo de lista (original) */
+    margin-left: 25px;               /* Margen (original) */
+    color: #0d0945;                  /* Color (original) */
+    margin-bottom: 20px;             /* Margen (original) */
+    text-align: left;                /* Alineación (original) */
+}
+
+.custom-text-box ul li {
+    margin-bottom: 8px;              /* Margen (original) */
+    font-size: 1rem;                 /* Tamaño de fuente (original) */
+    /* APLICACIÓN DE FUENTE: 'Lora' para los ítems de lista en esta sección. */
+    font-family: 'Lora', serif; 
+}
+
+.custom-button {
+    margin-top: 20px;                /* Margen (original) */
+    background: #0d0945;             /* Fondo del botón (original) */
+    color: #fff;                    /* Color del texto (original) */
+    border-radius: 50px;             /* Bordes redondeados (original) */
+    padding: 12px 30px;              /* Espaciado interno (original) */
+    font-size: 1.0rem;               /* Tamaño de fuente (original) */
+    /* APLICACIÓN DE FUENTE: 'Lora' para este botón. */
+    font-family: 'Lora', serif; 
+}
+
+.custom-button:hover {
+    background-color: #bbb8ed;      /* Fondo al pasar el ratón (original) */
+    transform: translateY(-3px);     /* Transform al pasar el ratón (original) */
+}
+
+.custom-video-responsive {
+    flex: 1 1 55%;                   /* El video ocupa el 55% del ancho flexible */
+    min-width: 320px;                /* Ancho mínimo antes de apilarse */
+    position: relative;              /* Posicionamiento (original) */
+    padding-bottom: 30%;             /* Truco para mantener la relación de aspecto del video (original) */
+    height: 0;                       /* Altura inicial (original) */
+    overflow: hidden;                /* Oculta desbordamiento */
+    border-radius: 8px;              /* Bordes redondeados (original) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra (original) */
+}
+
+.custom-video-responsive video {
+    position: absolute;              /* Posicionamiento absoluto */
+    top: 0;                          /* Alineado arriba */
+    left: 0;                         /* Alineado izquierda */
+    width: 100%;                     /* Ancho completo */
+    height: 100%;                    /* Alto completo */
+    object-fit: cover;               /* Ajusta el video para cubrir el contenedor */
+}
+
+/* ========================================================================= */
+/* NUEVA SECCIÓN: Linterna / Reflector de Proyectos (Instrumentales Interactivos) */
+/* ========================================================================= */
+.instrumentals-reflector-section {
+    background-color: rgba(19, 73, 90, 0.6); /* Fondo semitransparente (original) */
+    padding: 80px 0;                 /* Espaciado interno (original) */
+    text-align: center;              /* Alineación del texto (original) */
+    position: relative;              /* Posicionamiento (original) */
+    z-index: 10;                     /* Z-index (original) */
+    margin-bottom: 30px;             /* Margen inferior (original) */
+    border-radius: 750px 0 750px 0;  /* Bordes redondeados personalizados (original) */
+    box-shadow: 0 0 30px rgba(51, 123, 218, 0.5), /* Sombra (original) */
+                0 0 60px rgba(47, 50, 193, 0.2);
+}
+
+.instrumentals-reflector-section h2 {
+    color: #07064b;                  /* Color del título (original) */
+    font-size: 2.5rem;               /* Tamaño de fuente (original) */
+    margin-bottom: 20px;             /* Margen (original) */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Sombra de texto (original) */
+    /* APLICACIÓN DE FUENTE: 'Playfair Display' para este título h2. */
+    font-family: 'Playfair Display', serif; 
+}
+
+.instrumentals-reflector-section p {
+    color: #e0e0e0;                  /* Color del texto (original) */
+    line-height: 1.7;                /* Altura de línea (original) */
+    margin-bottom: 40px;             /* Margen (original) */
+    font-size: 1.1rem;               /* Tamaño de fuente (original) */
+    /* APLICACIÓN DE FUENTE: 'Lora' para los párrafos de esta sección. */
+    font-family: 'Lora', serif; 
+}
+
+.instrumentals-grid {
+    display: grid;                   /* Usa CSS Grid para una cuadrícula (original) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas (original) */
+    gap: 30px;                       /* Espacio entre los ítems (original) */
+    max-width: 1200px;               /* Ancho máximo (original) */
+    margin: 0 auto;                  /* Centra la cuadrícula (original) */
+    padding: 0 20px;                 /* Espaciado interno (original) */
+}
+
+.instrumental-item {
+    position: relative;              /* Posicionamiento (original) */
+    overflow: hidden;                /* Oculta desbordamiento (original) */
+    border-radius: 10px;             /* Bordes redondeados (original) */
+    box-shadow: 0 5px 15px rgba(160, 89, 89, 0.3); /* Sombra (original) */
+    cursor: pointer;                 /* Cursor (original) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición (original) */
+}
+
+.instrumental-item:hover {
+    transform: translateY(-5px);     /* Transform al pasar el ratón (original) */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Sombra al pasar el ratón (original) */
+}
+
+.instrumental-thumbnail {
+    width: 100%;                     /* Ancho (original) */
+    height: 200px;                   /* Altura (original) */
+    object-fit: cover;               /* Ajuste de imagen (original) */
+    display: block;                  /* Display (original) */
+    filter: brightness(30%) grayscale(80%); /* Filtro (original) */
+    transition: filter 0.5s ease;    /* Transición (original) */
+}
+
+.instrumental-item:hover .instrumental-thumbnail {
+    filter: brightness(100%) grayscale(0%); /* Filtro al pasar el ratón (original) */
+}
+
+.instrumental-overlay {
+    position: absolute;              /* Posicionamiento (original) */
+    top: 0;                          /* Alineado arriba (original) */
+    left: 0;                         /* Alineado izquierda (original) */
+    width: 100%;                     /* Ancho (original) */
+    height: 100%;                    /* Altura (original) */
+    background-color: rgba(19, 73, 90, 0.6); /* Fondo (original) */
+    display: flex;                   /* Display (original) */
+    flex-direction: column;          /* Dirección de flex (original) */
+    justify-content: center;         /* Justificación (original) */
+    align-items: center;             /* Alineación (original) */
+    color: #fff;                    /* Color (original) */
+    text-align: center;              /* Alineación (original) */
+    opacity: 1;                      /* Opacidad (original) */
+    transition: opacity 0.5s ease;   /* Transición (original) */
+    padding: 15px;                   /* Padding (original) */
+}
+
+.instrumental-item:hover .instrumental-overlay {
+    opacity: 0;                      /* Opacidad al pasar el ratón (original) */
+}
+
+.instrumental-title {
+    font-size: 1.4rem;               /* Tamaño de fuente (original) */
+    font-weight: 700;                /* Peso de fuente (original) */
+    margin-bottom: 10px;             /* Margen (original) */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8); /* Sombra de texto (original) */
+    opacity: 1;                      /* Opacidad (original) */
+    transition: opacity 0.3s ease;   /* Transición (original) */
+    /* APLICACIÓN DE FUENTE: 'Playfair Display' para el título del instrumental. */
+    font-family: 'Playfair Display', serif; 
+}
+
+.instrumental-cta {
+    font-size: 0.9rem;               /* Tamaño de fuente (original) */
+    font-weight: 500;                /* Peso de fuente (original) */
+    opacity: 0;                      /* Opacidad (original) */
+    transform: translateY(10px);     /* Transform (original) */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transición (original) */
+    color: #90EE90;                  /* Color (original) */
+    /* APLICACIÓN DE FUENTE: 'Lora' para el CTA del instrumental. */
+    font-family: 'Lora', serif; 
+}
+
+/* Estilos cuando un instrumental está ACTIVO (reproduciéndose) */
+.instrumental-item.playing {
+    border: 3px solid #00FFFF;       /* Borde (original) */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7); /* Sombra (original) */
+    transform: scale(1.02);          /* Transform (original) */
+}
+
+/* Ocultar el elemento de audio, ya que lo controlaremos con JavaScript */
+.instrumental-audio {
+    display: none;
+}
+
+/* ========================================================================= */
+/* ESTILOS: SECCIÓN DE CONTACTO "Conectemos" */
+/* ========================================================================= */
+
+.contact-section {
+    background-color: #1a1a1a; /* Fondo original que tenías en tu código */
+    padding: 100px 0;          /* Espaciado interno (original) */
+    text-align: center;        /* Alineación (original) */
+    position: relative;        /* Posicionamiento (original) */
+    z-index: 10;               /* Z-index (original) */
+    margin-bottom: 0;          /* Margen (original) */
+    border-radius: 0;          /* Bordes (original) */
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5); /* Sombra (original) */
+}
+
+.contact-flex-container {
+    display: flex;             /* Display (original) */
+    flex-wrap: wrap;           /* Flex-wrap (original) */
+    gap: 50px;                 /* Gap (original) */
+    align-items: flex-start;   /* Alineación (original) */
+    justify-content: center;   /* Justificación (original) */
+    padding: 0 30px;           /* Padding (original) */
+    max-width: 1200px;         /* Ancho máximo (original) */
+    margin: auto;              /* Margen (original) */
+}
+
+/* Estilos para la Columna de Información de Contacto (izquierda) */
+.contact-info-column {
+    flex: 1 1 45%;             /* Flex (original) */
+    min-width: 300px;          /* Ancho mínimo (original) */
+    background-color: rgba(30, 30, 45, 0.8); /* Fondo (original) */
+    padding: 40px;             /* Padding (original) */
+    border-radius: 10px;       /* Bordes (original) */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra (original) */
+    text-align: left;          /* Alineación (original) */
+}
+
+.contact-heading {
+    color: #14adad;            /* Color (original) */
+    font-size: 3rem;           /* Tamaño original */
+    margin-bottom: 25px;       /* Margen original */
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.6); /* Sombra de texto (original) */
+    text-align: center;        /* Alineación original */
+    /* APLICACIÓN DE FUENTE: 'Bodoni Moda' para el título de contacto. */
+    font-family: 'Bodoni Moda', serif; 
+}
+
+.contact-intro-text {
+    color: #e0e0e0;            /* Color original */
+    font-size: 1.1rem;         /* Tamaño original */
+    line-height: 1.7;          /* Altura de línea original */
+    margin-bottom: 35px;       /* Margen original */
+    text-align: justify;       /* Alineación original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para el texto introductorio. */
+    font-family: 'Lora', serif; 
+}
+
+.contact-details-list {
+    list-style: none;          /* Estilo original */
+    padding: 0;                /* Padding original */
+    margin-bottom: 40px;       /* Margen original */
+}
+
+.contact-details-list li {
+    display: flex;             /* Display original */
+    align-items: center;       /* Alineación original */
+    margin-bottom: 20px;       /* Margen original */
+    color: #e0e0e0;            /* Color original */
+    font-size: 1.05rem;        /* Tamaño original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para los ítems de la lista de contacto. */
+    font-family: 'Lora', serif; 
+}
+
+.contact-icon {
+    font-size: 1.5rem;         /* Tamaño original */
+    color: #ffffff;           /* Color original */
+    margin-right: 15px;        /* Margen original */
+    transition: color 0.3s ease; /* Transición original */
+}
+
+.contact-details-list li:hover .contact-icon {
+    color: #33267d;            /* Color original */
+}
+
+.contact-link {
+    color: #e0e0e0;            /* Color original */
+    text-decoration: none;     /* Decoración original */
+    transition: color 0.3s ease; /* Transición original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para los enlaces de contacto. */
+    font-family: 'Lora', serif; 
+}
+
+.contact-link:hover {
+    color: #77aaff;            /* Color original */
+    text-decoration: underline; /* Decoración original */
+}
+
+.contact-text {
+    color: #e0e0e0;            /* Color original */
+    font-size: 1rem;           /* Tamaño original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para el texto sin enlace. */
+    font-family: 'Lora', serif; 
+}
+
+
+/* Estilos para los enlaces a redes sociales */
+.social-links {
+    margin-top: 40px;          /* Margen original */
+    text-align: center;        /* Alineación original */
+}
+
+.social-icon-link {
+    display: inline-block;     /* Display original */
+    font-size: 2.5rem;         /* Tamaño original */
+    color: #38dbbd;            /* Color original */
+    margin: 0 15px;            /* Margen original */
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Transición original */
+}
+
+.social-icon-link:hover {
+    color: #9c5cea;            /* Color original */
+    transform: translateY(-5px) scale(1.1); /* Transform original */
+    text-shadow: 0 0 15px rgba(54, 95, 229, 0.7); /* text-shadow original */
+}
+
+
+/* Estilos para la Columna del Formulario de Contacto (derecha) */
+.contact-form-column {
+    flex: 1 1 45%;             /* Flex original */
+    min-width: 300px;          /* Ancho mínimo original */
+    background-color: rgba(30, 30, 45, 0.8); /* Fondo original */
+    padding: 40px;             /* Padding original */
+    border-radius: 10px;       /* Bordes originales */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra original */
+}
+
+.form-heading {
+    color: #14adad;            /* Color original */
+    font-size: 2.5rem;         /* Tamaño original */
+    margin-bottom: 30px;       /* Margen original */
+    text-shadow: 0 0 12px rgba(0, 191, 255, 0.6); /* Sombra de texto original */
+    text-align: center;        /* Alineación original */
+    /* APLICACIÓN DE FUENTE: 'Bodoni Moda' para el título del formulario. */
+    font-family: 'Bodoni Moda', serif; 
+}
+
+.contact-form .form-group {
+    margin-bottom: 25px;       /* Margen original */
+    text-align: left;          /* Alineación original */
+}
+
+.contact-form .form-label {
+    display: block;            /* Display original */
+    color: #e0e0e0;            /* Color original */
+    font-size: 1.0rem;         /* Tamaño original */
+    margin-bottom: 8px;        /* Margen original */
+    font-weight: 500;          /* Peso original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para las etiquetas del formulario. */
+    font-family: 'Lora', serif; 
+}
+
+.contact-form .form-control {
+    width: 100%;               /* Ancho original */
+    padding: 12px 15px;        /* Padding original */
+    background-color: rgba(60, 60, 80, 0.7); /* Fondo original */
+    border: 1px solid rgba(100, 100, 150, 0.5); /* Borde original */
+    border-radius: 5px;        /* Bordes originales */
+    color: #fff;               /* Color original */
+    font-size: 1rem;           /* Tamaño original */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para los inputs del formulario. */
+    font-family: 'Lora', serif; 
+}
+
+.contact-form .form-control::placeholder {
+    color: #bbb;              /* Color original */
+}
+
+.contact-form .form-control:focus {
+    border-color: #00FFFF;     /* Borde original */
+    box-shadow: 0 0 0 0.25rem rgba(0, 255, 255, 0.25); /* Sombra original */
+    outline: none;             /* Outline original */
+    background-color: rgba(60, 60, 80, 0.9); /* Fondo original */
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;          /* Redimensionamiento (original) */
+    min-height: 120px;         /* Altura mínima (original) */
+}
+
+.submit-button {
+    display: inline-block;     /* Display (original) */
+    width: auto;               /* Ancho (original) */
+    padding: 15px 40px;        /* Padding (original) */
+    background: linear-gradient(90deg, #8dbfec, #33267d); /* Fondo (original) */
+    color: #fff;              /* Color (original) */
+    border: none;              /* Borde (original) */
+    border-radius: 50px;       /* Bordes (original) */
+    font-size: 1.1rem;         /* Tamaño original */
+    font-weight: bold;         /* Peso original */
+    letter-spacing: 1px;       /* Espaciado (original) */
+    cursor: pointer;           /* Cursor (original) */
+    transition: all 0.3s ease; /* Transición (original) */
+    box-shadow: 0 5px 15px rgba(186, 85, 211, 0.4); /* Sombra (original) */
+    margin-top: 20px;          /* Margen (original) */
+    /* APLICACIÓN DE FUENTE: 'Lora' para el botón de envío. */
+    font-family: 'Lora', serif; 
+}
+
+.submit-button:hover {
+    background: linear-gradient(90deg, #33267d, #8dbfec); /* Fondo al pasar el ratón (original) */
+    transform: translateY(-3px) scale(1.02); /* Transform al pasar el ratón (original) */
+}
+
+
+/* ========================================================================= */
+/* ESTILOS: SECCIÓN DE FOOTER (PIE DE PÁGINA) */
+/* ========================================================================= */
+
+.main-footer {
+    background-color: #151520; /* Fondo original que tenías en tu código */
+    padding: 80px 0 20px 0;    /* Padding (original) */
+    color: #e0e0e0;            /* Color (original) */
+    position: relative;        /* Posicionamiento (original) */
+    z-index: 10;               /* Z-index (original) */
+    /* NO SE AÑADE NI MODIFICA NINGÚN box-shadow aquí. */
+}
+
+.footer-grid {
+    display: grid;             /* Display (original) */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Columnas (original) */
+    gap: 40px;                 /* Gap (original) */
+    padding-bottom: 50px;      /* Padding (original) */
+    text-align: left;          /* Alineación (original) */
+}
+
+.footer-column {
+    padding: 10px 0;           /* Padding (original) */
+}
+
+/* Estilos para los títulos de las columnas del footer */
+.footer-heading {
+    color: #00FFFF;            /* Color (original) */
+    font-size: 1.6rem;         /* Tamaño original */
+    margin-bottom: 25px;       /* Margen original */
+    font-weight: 700;          /* Peso original */
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4); /* Sombra de texto (original) */
+    /* APLICACIÓN DE FUENTE: 'Bodoni Moda' para el título del footer. */
+    font-family: 'Bodoni Moda', serif; 
+}
+
+/* Estilos de la columna de la marca (logo y eslogan) */
+.footer-brand {
+    text-align: center;        /* Alineación (original) */
+}
+
+.footer-logo-link {
+    display: inline-block;     /* Display (original) */
+    margin-bottom: 20px;       /* Margen (original) */
+}
+
+.footer-logo {
+    max-width: 180px;          /* Ancho (original) */
+    height: auto;              /* Altura (original) */
+    filter: brightness(1.2);   /* Filtro (original) */
+    transition: filter 0.3s ease; /* Transición (original) */
+}
+
+.footer-logo:hover {
+    filter: brightness(1.5);   /* Filtro al pasar el ratón (original) */
+}
+
+.footer-slogan {
+    font-size: 1.05rem;        /* Tamaño original */
+    line-height: 1.6;          /* Altura de línea (original) */
+    color: #bbb;              /* Color (original) */
+    margin-bottom: 20px;       /* Margen (original) */
+    /* APLICACIÓN DE FUENTE: 'Lora' para el eslogan del footer. */
+    font-family: 'Lora', serif; 
+}
+
+.footer-copyright-main {
+    font-size: 0.85rem;        /* Tamaño original */
+    color: #888;              /* Color original */
+    margin-top: 20px;          /* Margen original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para el copyright principal del footer. */
+    font-family: 'Lora', serif; 
+}
+
+/* Estilos para las listas de enlaces y contacto en el footer */
+.footer-list {
+    list-style: none;          /* Estilo original */
+    padding: 0;                /* Padding original */
+    margin: 0;                 /* Margen original */
+}
+
+.footer-list li {
+    margin-bottom: 12px;       /* Margen original */
+    display: flex;             /* Display original */
+    align-items: center;       /* Alineación original */
+    color: #e0e0e0;            /* Color original */
+    font-size: 1.05rem;        /* Tamaño original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para los ítems de la lista del footer. */
+    font-family: 'Lora', serif; 
+}
+
+.footer-link {
+    color: #e0e0e0;            /* Color original */
+    text-decoration: none;     /* Decoración original */
+    font-size: 1rem;           /* Tamaño original */
+    transition: color 0.3s ease, transform 0.2s ease; /* Transición original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para los enlaces del footer. */
+    font-family: 'Lora', serif; 
+}
+
+.footer-link:hover {
+    color: #77aaff;            /* Color original */
+    text-decoration: underline; /* Decoración original */
+}
+
+.footer-icon {
+    font-size: 1.1rem;         /* Tamaño original */
+    color: #90EE90;            /* Color original */
+    margin-right: 10px;        /* Margen original */
+    transition: color 0.3s ease; /* Transición original */
+}
+
+.footer-list li:hover .footer-icon {
+    color: #FFA500;            /* Color original */
+}
+
+.footer-text {
+    color: #e0e0e0;            /* Color original */
+    font-size: 1rem;           /* Tamaño original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para el texto del footer. */
+    font-family: 'Lora', serif; 
+}
+
+
+/* Estilos para los enlaces a redes sociales en el footer */
+.social-icons-footer {
+    margin-top: 15px;          /* Margen original */
+    display: flex;             /* Display original */
+    justify-content: center;   /* Justify (original) */
+    gap: 15px;                 /* Gap (original) */
+}
+
+.social-icon-footer {
+    display: inline-block;     /* Display (original) */
+    font-size: 2.2rem;         /* Tamaño original */
+    color: #BA55D3;            /* Color original */
+    margin: 0 15px;            /* Margen original */
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease; /* Transición original */
+}
+
+.social-icon-footer:hover {
+    color: #FF69B4;            /* Color original */
+    transform: translateY(-5px) scale(1.1); /* Transform (original) */
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.7); /* Sombra (original) */
+}
+
+.footer-rights {
+    font-size: 0.85rem;        /* Tamaño original */
+    color: #888;              /* Color original */
+    margin-top: 25px;          /* Margen original */
+    text-align: center;        /* Alineación original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para el copyright del footer. */
+    font-family: 'Lora', serif; 
+}
+
+/* Estilos para la barra inferior del footer (eslogan final) */
+.footer-bottom-bar {
+    background-color: #070715; /* Fondo original */
+    padding: 15px 0;           /* Padding (original) */
+    margin-top: 40px;          /* Margen (original) */
+}
+
+.footer-tagline {
+    font-size: 0.9rem;         /* Tamaño original */
+    color: #aaa;              /* Color original */
+    margin: 0;                 /* Margen original */
+    text-align: center;        /* Alineación original */
+    /* APLICACIÓN DE FUENTE: 'Lora' para el eslogan de la barra inferior. */
+    font-family: 'Lora', serif; 
+}
+
+
+/* ========================================================================= */
+/* MEDIA QUERIES GENERALES */
+/* (NO SE MODIFICAN, SE MANTIENEN COMO LAS TENÍAS) */
+/* ========================================================================= */
+@media (max-width: 992px) {
+  .container {
+    width: 95%;
+  }
+  .video-text-flex { 
+    flex-direction: column;
+  }
+  .text-explanation { 
+    text-align: center;
+  }
+  .full-width-text {
+    padding: 0 10px;
+  }
+
+  /* Media query para la SECCIÓN: VIDEO LOCAL A LA DERECHA (custom-video-section) */
+  .custom-flex-container {
+      flex-direction: column-reverse; 
+      padding: 0 15px;
+  }
+  .custom-text-box,
+  .custom-video-responsive {
+      width: 100%;
+      min-width: unset;
+  }
+  .custom-text-box {
+      padding-top: 20px;
+      text-align: center;
+  }
+  .custom-text-box ul {
+      margin-left: 0;
+      padding-left: 0;
+      list-style-position: inside;
+  }
+
+  /* Media query para la NUEVA SECCIÓN: Linterna / Reflector de Proyectos (instrumentals-reflector-section) */
+  .instrumentals-grid {
+    grid-template-columns: 1fr; 
+    padding: 0 15px;
+  }
+  .instrumental-thumbnail {
+    height: 250px; 
+  }
+  .instrumental-overlay {
+    opacity: 0.8; 
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .instrumental-item:hover .instrumental-overlay {
+    opacity: 0.8; 
+  }
+  .instrumental-cta {
+    opacity: 1; 
+    transform: translateY(0);
+  }
+
+  /* Media query para la NUEVA SECCIÓN DE CONTACTO */
+  .contact-flex-container {
+      flex-direction: column; 
+      gap: 40px; 
+  }
+  .contact-info-column,
+  .contact-form-column {
+      flex: 1 1 100%; 
+      min-width: unset; 
+      padding: 30px; 
+  }
+  .contact-info-column {
+      order: 2; 
+      text-align: center; 
+  }
+  .contact-details-list li {
+      justify-content: center; 
+      text-align: center;
+  }
+  .social-links {
+      margin-top: 30px;
+  }
+
+  /* Media query para el FOOTER */
+  .main-footer {
+      padding: 60px 0 20px 0; 
+  }
+  .footer-grid {
+      grid-template-columns: 1fr; 
+      text-align: center; 
+      gap: 30px; 
+  }
+  .footer-column {
+      padding: 0; 
+  }
+  .footer-brand,
+  .footer-links,
+  .footer-contact,
+  .footer-social {
+      max-width: 80%; 
+      margin: 0 auto; 
+  }
+  .footer-logo {
+      max-width: 150px; 
+  }
+  .footer-heading {
+      font-size: 1.4rem; 
+      margin-bottom: 15px;
+  }
+  .footer-list li {
+      justify-content: center; 
+  }
+  .social-icons-footer {
+      justify-content: center; 
+  }
+}
+
+@media (max-width: 768px) {
+  .video-section h2 {
+    font-size: 1.8rem;
+  }
+  .full-width-text {
+    font-size: 1rem;
+  }
+
+  /* Media query para la SECCIÓN: VIDEO LOCAL A LA DERECHA */
+  .custom-text-box h2 {
+      font-size: 1.8rem;
+  }
+  .custom-text-box p,
+  .custom-text-box ul li {
+      font-size: 0.95rem;
+  }
+
+  /* Media query para la NUEVA SECCIÓN: Linterna / Reflector de Proyectos */
+  .instrumentals-reflector-section h2 {
+      font-size: 2rem;
+  }
+  .instrumental-thumbnail {
+      height: 250px; 
+  }
+  .instrumental-title {
+      font-size: 1.3rem;
+  }
+  .instrumental-cta {
+      font-size: 0.9rem;
+  }
+
+  /* Media query para la NUEVA SECCIÓN DE CONTACTO */
+  .contact-section {
+      padding: 80px 0;
+  }
+  .contact-heading, .form-heading {
+      font-size: 2rem; 
+  }
+  .contact-intro-text, .contact-details-list li, .contact-form .form-label, .contact-form .form-control, .submit-button {
+      font-size: 0.95rem; 
+  }
+  .contact-details-list li {
+      flex-direction: column; 
+      align-items: center; 
+  }
+  .contact-icon {
+      margin-right: 0; 
+      margin-bottom: 8px; 
+  }
+  .social-icon-link {
+      font-size: 2rem; 
+      margin: 0 10px;
+  }
+
+  /* Media query para el FOOTER */
+  .main-footer {
+      padding: 40px 0 15px 0; 
+  }
+  .footer-heading {
+      font-size: 1.3rem;
+  }
+  .footer-list li,
+  .footer-slogan,
+  .footer-text,
+  .footer-link,
+  .footer-rights {
+      font-size: 0.9rem;
+  }
+  .social-icon-footer {
+      font-size: 2rem;
+      margin: 0 10px;
+  }
+  .footer-bottom-bar {
+      margin-top: 20px;
+  }
+  .footer-tagline {
+      font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-logo {
+    max-height: 50px;
+    width: 150px;
+  }
+  .video-section h2 {
+    font-size: 1.5rem;
+  }
+  .full-width-text {
+    font-size: 0.9rem;
+    padding: 0 2%;
+  }
+  .button {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+
+  /* Media query para la SECCIÓN: VIDEO LOCAL A LA DERECHA */
+  .custom-text-box h2 {
+      font-size: 1.6rem;
+  }
+
+  /* Media query para la NUEVA SECCIÓN: Linterna / Reflector de Proyectos */
+  .instrumentals-reflector-section h2 {
+      font-size: 1.8rem;
+  }
+  .instrumental-thumbnail {
+      height: 200px;
+  }
+  .instrumental-title {
+      font-size: 1.1rem;
+  }
+  .instrumental-cta {
+      font-size: 0.8rem;
+  }
+
+  /* Media query para la NUEVA SECCIÓN DE CONTACTO */
+  .contact-section {
+      padding: 60px 0;
+  }
+  .contact-heading, .form-heading {
+      font-size: 1.8rem;
+  }
+  .contact-info-column,
+  .contact-form-column {
+      padding: 25px;
+  }
+  .submit-button {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 1rem;
+  }
+  .contact-intro-text {
+      font-size: 0.9rem;
+  }
+
+  /* Media query para el FOOTER */
+  .main-footer {
+      padding: 30px 0 10px 0;
+  }
+  .footer-logo {
+      max-width: 120px;
+  }
+  .footer-heading {
+      font-size: 1.2rem;
+  }
+  .social-icon-footer {
+      font-size: 1.8rem;
+      margin: 0 8px;
+  }
+}
