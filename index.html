@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MDOV Productions</title>
+  <link rel="stylesheet" href="css/sobremi.css" />
+  <!-- Tipografías desde Google Fonts -->
+   <!-- Bootstrap Icons CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Coloca esto en el <head> o justo antes del cierre de </body> -->
+<script src="https://kit.fontawesome.com/1c8cfc5a29.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<!-- HEADER: para PC y móvil con hamburguesa -->
+<header class="header">
+
+  <!-- Barra móvil: logo + botón hamburguesa (solo visible en celular) -->
+  <div class="barra-movil">
+    <a href="index.html">
+      <img src="images/LogoMDOV.jpg" alt="Logo MDOV" class="logo-movil" />
+    </a>
+    <button class="hamburguesa" id="hamburguesa">&#9776;</button>
+  </div>
+
+  <!-- Menú de navegación -->
+  <nav class="nav menu-links" id="menu-links">
+    <a href="index.html" class="boton-glitch">Nosotros</a>
+    <a href="trabajos.html" class="boton-glitch">Trabajos</a>
+    <a href="galeria.html" class="boton-glitch">Galería</a>
+    <a href="contacto.html" class="boton-glitch">Contacto</a>
+  </nav>
+</header>
+
+
+
+
+<!-- SECCIÓN 1: SOBRE MÍ (parte superior) -->
+<section class="sobre-mi">
+  <div class="contenedor">      
+    <div class="intro-imagen">
+      <img src="images/LogoMDOV.jpg" alt="Logo MDOV" />
+    </div>
+    <div class="intro-texto">
+      <h1>¡Bienvenido a<br>MDOV Productions!</h1>
+      <p>Este es un espacio donde convergen mis ideas, proyectos y pasiones como creador multimedia. Aquí encontrarás una selección de cortometrajes, composiciones musicales, colaboraciones audiovisuales, diseños gráficos y fotografía personal. Este sitio refleja mi proceso creativo y mi búsqueda constante por experimentar con el sonido, la imagen y el diseño desde una visión original, honesta y en evolución.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 2: GALERÍA PERSONAL (parte inferior de SOBRE MÍ en PC) -->
+<section class="galeria-personal">
+  <div class="bloque-inferior">
+    
+    <!-- 📸 Foto izquierda -->
+    <div class="bloque-foto">
+      <img id="foto-izquierda" src="images/Foto1.jpeg" alt="Foto personal 1" />
+    </div>
+
+    <!-- 🧾 Texto central -->
+    <div class="bloque-texto">
+      <h2>¿Cómo se creó MDOV Productions?</h2>
+      <p>
+        <b>MDOV Productions</b> nació como un homenaje íntimo y creativo. Sus letras encierran a quienes lo inspiraron desde el corazón: Marcela, Daniela, Daniel, Oscar y la V, que une el nombre de David y simboliza el impulso de avanzar.
+        Pero MDOV también representa su esencia profesional:
+        <b>Música, Diseño, Originalidad y Visión.</b> Una marca que fusiona lo familiar con lo artístico, lo emocional con lo creativo.
+      </p>
+    </div>
+
+    <!-- 📸 Foto derecha -->
+    <div class="bloque-foto">
+      <img id="foto-derecha" src="images/Foto2.jpeg" alt="Foto personal 2" />
+    </div>
+
+  </div>
+</section>
+
+<!-- 🔗 Vínculo al archivo JavaScript -->
+<script src="script/js.js"></script>
+
+
+<!-- SECCIÓN TRABAJOS – Parte 1: Cortometraje + Instrumentales -->
+<section class="trabajos-principales">
+  <div class="contenedor-trabajos">
+
+    <!-- Botón hacia sección audiovisuales -->
+    <div class="trabajo-box">
+      <a href="trabajos.html#audiovisuales">
+        <img src="images/desayunocover.jpg" alt="Último cortometraje: El Desayuno" />
+        <h3>Audiovisuales</h3>
+      </a>
+    </div>
+
+    <!-- Botón hacia sección instrumentales -->
+    <div class="trabajo-box">
+      <a href="trabajos.html#instrumentales">
+        <img src="images/midi.png" alt="Instrumentales MDOV" />
+        <h3>Instrumentales</h3>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CONTENEDOR PRINCIPAL: Galería a la izquierda + Colaboraciones a la derecha -->
+<section class="galeria-colaboraciones">
+
+<!-- GALERÍA: dos botones en columna -->
+<div class="galeria">
+  <!-- Botón que lleva a la sección de DISEÑOS en galeria.html -->
+  <a href="galeria.html#galeria-disenos" class="galeria-btn">Diseño</a>
+
+  <!-- Botón que lleva a la sección de FOTOS en galeria.html -->
+  <a href="galeria.html#galeria-fotos" class="galeria-btn">Fotografía</a>
+</div>
+
+
+  <!-- COLABORACIONES: dos cajas una al lado de la otra -->
+  <div class="colaboraciones">
+    <div class="colab-item">
+      <img src="images/ableton.jpg" alt="Imagen Ableton 1" />
+      <p>Utilizo Ableton Live como mi herramienta principal para la creación de instrumentales, permitiéndome desarrollar cada beat con precisión y flexibilidad.</p>
+    </div>
+
+    <div class="colab-item">
+      <p>También empleo Ableton Live en presentaciones en vivo y edición de audio, explorando efectos y procesamiento en tiempo real para potenciar cada experiencia sonora.
+
+</p>
+      <img src="images/ableton2.jpg" alt="Imagen Ableton 2" />
+    </div>
+  </div>
+
+</section>
+
+<footer class="footer-cyberpunk">
+
+  <!-- Logo con glitch -->
+  <h2 class="mdov-glitch">MDOV</h2>
+
+  <!-- Espacio para QR -->
+  <div class="qr-box">
+    <p>[Espacio para<br>QR]</p>
+  </div>
+
+<!-- Íconos de redes sociales con Bootstrap Icons -->
+<div class="social-icons">
+  <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+    <i class="bi bi-instagram"></i>
+  </a>
+  <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+    <i class="bi bi-youtube"></i>
+  </a>
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+    <i class="bi bi-facebook"></i>
+  </a>
+</div>
+
+  <!-- Frase final -->
+  <h2 class="footer-frase">"Music, Design, Originality and Vision."</h2>
+<p class="copyright-glitch" data-text="© 2025 MDOV Productions. Todos los derechos reservados.">
+  © 2025 MDOV Productions. Todos los derechos reservados.
+</p>
+
+</footer>
+<script>
+  // Mostrar/ocultar menú al tocar la hamburguesa
+  const btn = document.getElementById("hamburguesa");
+  const menu = document.getElementById("menu-links");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("activo");
+  });
+</script>
+
+</body>
+</html>

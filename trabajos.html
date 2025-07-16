@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MDOV Productions | Trabajos</title>
+
+  <!-- Estilos específicos para esta página -->
+  <link rel="stylesheet" href="css/trabajos.css" />
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <!-- Íconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/1c8cfc5a29.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<!-- HEADER: para PC y móvil con hamburguesa -->
+<header class="header">
+
+  <!-- Barra móvil: logo + botón hamburguesa (solo visible en celular) -->
+  <div class="barra-movil">
+    <a href="index.html">
+      <img src="images/LogoMDOV.jpg" alt="Logo MDOV" class="logo-movil" />
+    </a>
+    <button class="hamburguesa" id="hamburguesa">&#9776;</button>
+  </div>
+
+  <!-- Menú de navegación -->
+  <nav class="nav menu-links" id="menu-links">
+    <a href="index.html" class="boton-glitch">Nosotros</a>
+    <a href="trabajos.html" class="boton-glitch">Trabajos</a>
+    <a href="galeria.html" class="boton-glitch">Galería</a>
+    <a href="contacto.html" class="boton-glitch">Contacto</a>
+  </nav>
+</header>
+
+
+<!--------
+ SECCIÓN 1 AUDIOVISUALES
+ --------->
+
+ <section class="seccion-audiovisual">
+  <div class="contenedor-audiovisual">
+    <div class="audiovisual-texto">
+      <h2>"El desayuno", nuestro último cortometraje</h2>
+      <p>
+        <em>MDOV Productions</em> realizó un cortometraje que retrata escenas cotidianas junto a un ser querido. Momentos que, aunque parecen insignificantes, pueden terminar marcando la memoria con la ausencia.         
+      </p>
+      
+    </div>
+    <div class="audiovisual-video">
+      <video controls>
+        <source src="videos/eldesayuno.mp4" type="video/mp4" />
+        Tu navegador no soporta el video HTML5.
+      </video>
+    
+    </div>
+  </div>
+</section>
+
+<!--------
+ SECCIÓN 2 AUDIOVISUALES
+ --------->
+
+<section class="seccion-audiovisual segunda">
+  <div class="contenedor-audiovisual segunda">
+    <div class="audiovisual-video">
+      <video controls>
+        <source src="videos/planb.mp4" type="video/mp4" />
+        Tu navegador no soporta el video HTML5.
+      </video>
+    </div>
+    <div class="audiovisual-texto">
+      <h2>"Plan B"</h2>
+      <p>
+        Una historia que comienza como cualquier tarde entre amigos... hasta que todo toma un giro inesperado. Humor simple, situaciones que pueden pasar.
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!--------
+   SECCIÓN INSTRUMENTALES 
+   --------->
+
+<section id="instrumentales" class="seccion-instrumentales">
+  <h2 class="texto-instrumental">Instrumentales Originales<h2>
+  <div class="contenedor-instrumentales">
+
+    <!-- Instrumental 1 -->
+        <div class="caja-instrumental">
+          <p>Beat Intro</p>
+            <img src="images/rap1.png" alt="Instrumental 1" />
+                <audio controls>
+                    <source src="audio/instrumental1.mp3" type="audio/mp3" />
+                        Tu navegador no soporta audio HTML5.
+  </audio>
+</div>
+
+    <!-- Instrumental 2 -->
+    <div class="caja-instrumental" onclick="reproducirAudio('audio2')">
+      <p>Beat Gangster</p>
+      <img src="images/rap2.png" alt="Instrumental 2" />
+      <audio id="audio2" controls>
+        <source src="audio/instrumental2.mp3" type="audio/mp3" />
+        Tu navegador no soporta audio HTML5.
+      </audio>
+    </div>
+
+    <!-- Instrumental 3 -->
+    <div class="caja-instrumental" onclick="reproducirAudio('audio3')">
+      <p>Beat Chill</p>
+      <img src="images/rap3.png" alt="Instrumental 3" />
+      <audio id="audio3" controls>
+        <source src="audio/instrumental3.mp3" type="audio/mp3" />
+        Tu navegador no soporta audio HTML5.
+      </audio>
+    </div>
+
+  </div>
+</section>
+
+<!-- Sección Colaboraciones -->
+<section class="colaboraciones" id="colaboraciones" >
+  <div class="contenedor-colaboraciones">
+    <h2>Aquí podrás escuchar mis colaboraciones con artistas emergentes de la localidad de Fontibon </h2>
+    
+    <div class="botones-colab">
+      <button onclick="irAVideo1()">Fuego por cenizas - Milenario</button>
+      <button onclick="irAVideo2()">Represento - Daez </button>
+    </div>
+  </div>
+</section>
+
+
+  <!-----------------------
+   FOOTER
+   ------------------------>
+  <footer class="footer-cyberpunk">
+  <!-- Logo con glitch -->
+  <h2 class="mdov-glitch">MDOV</h2>
+  <!-- Espacio para QR -->
+  <div class="qr-box">
+    <p>[Espacio para<br>QR]</p>
+  </div>
+
+<!-- Íconos de redes sociales con Bootstrap Icons -->
+<div class="social-icons">
+  <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+    <i class="bi bi-instagram"></i>
+  </a>
+  <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+    <i class="bi bi-youtube"></i>
+  </a>
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+    <i class="bi bi-facebook"></i>
+  </a>
+</div>
+
+  <!-- Frase final -->
+  <p class="footer-frase">"Music, Design, Originality and Vision."</p>
+<p class="copyright-glitch" data-text="© 2025 MDOV Productions. Todos los derechos reservados.">
+  © 2025 MDOV Productions. Todos los derechos reservados.
+</p>
+
+</footer>
+
+
+
+  <!-- SCRIPT para mostrar/ocultar el menú en celular -->
+  <script>
+    const botonHamburguesa = document.querySelector('.hamburguesa');
+    const menuLinks = document.querySelector('.menu-links');
+
+    botonHamburguesa.addEventListener('click', () => {
+      menuLinks.classList.toggle('activo');
+    });
+  </script>
+
+  <!-- JavaScript -->
+  <script src="script/js.js"></script>
+
+</body>
+</html>
