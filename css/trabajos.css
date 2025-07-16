@@ -166,7 +166,7 @@ body {
    PRIMERA SECCIÓN AUDIOVISUAL – TEXTO / VIDEO
 ----------------------------------------------- */
 .seccion-audiovisual {
-  padding: 4rem 2rem;
+  padding: 2px;
   color: rgb(8, 5, 48);
 }
 
@@ -201,6 +201,15 @@ body {
   margin: 0 auto; /* ← Centrado horizontalmente */
 }
 
+.audiovisual-video img {
+  width: 100%;
+  height: 300px;         /* Altura fija uniforme */
+  object-fit: cover;     /* Recorta sin deformar */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+
 
 /* Video a la derecha */
 .audiovisual-video {
@@ -214,6 +223,39 @@ body {
   border-radius: 0 30px 0 30px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
+
+.btn-ver-video {
+  display: block;
+  margin: 20px auto 30px auto;  /* Reducido el bottom margin */
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  background-color: #00B2A9;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-ver-video:hover {
+  background-color: #01908c;
+  transform: scale(1.05);
+}
+
+/* Evitar espacio excesivo entre secciones */
+.seccion-audiovisual {
+  padding-bottom: 1px; /* antes tal vez tenías 60px o más */
+}
+
+/* Si ves un espacio enorme entre secciones, añade: */
+.seccion-audiovisual + .seccion-audiovisual {
+  margin-top: 40px; /* Controlar espacio entre secciones seguidas */
+}
+
+
 
 /* -----------------------------------------------
    RESPONSIVE – MÓVIL
