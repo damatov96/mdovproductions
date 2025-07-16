@@ -516,14 +516,21 @@ background: linear-gradient(135deg, #4ea1a1, #1C2D4A); /* Fondo psicodélico sua
   }
 }
 
-/* Caja QR */
+/* ============================= */
+/* QR BOX – Imagen QR controlada */
+/* ============================= */
+
 .qr-box {
-  border: 2px dashed #00B2A9;
-  border-radius: 12px;
-  padding: 2rem;
-  width: 220px;
-  margin: 2rem auto;
-  font-size: 1.2rem;
+  width: 120px; /* Tamaño fijo pero pequeño */
+  margin: 20px auto; /* Centrado con margen vertical */
+}
+
+.qr-box img {
+  width: 100%;        /* Que ocupe el 100% del contenedor */
+  height: auto;       /* Mantener proporción */
+  display: block;     /* Eliminar espacio extra abajo */
+  border-radius: 12px; /* Opcional: bordes redondeados para estética */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra sutil */
 }
 
 /* Íconos de redes sociales con Bootstrap */
